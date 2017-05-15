@@ -5,11 +5,11 @@
       
       <div>
         <label>Name</label><br>
-        <input type="text" placeholder="Name" name="Name" @change="getInputName" v-model="inputName" />
+        <input type="text" placeholder="Name" name="Name" v-model="inputName" />
       </div>
       <div>  
         <label>Description</label><br>
-        <input type="text" placeholder="Description" name="Description" @change="getInputDesc" v-model="inputDescription" />
+        <input type="text" placeholder="Description" name="Description" v-model="inputDescription" />
       </div>
       <div>  
         <label>Category</label><br>
@@ -21,11 +21,11 @@
       </div>
       <div>  
         <label>Presentation Link</label><br>
-        <input type="text" placeholder="URL" name="URL" @change="getInputURL" v-model="inputURL" />
+        <input type="text" placeholder="URL" name="URL" v-model="inputURL" />
       </div>
       <div>  
         <label>SNS Link</label><br>
-        <input type="text" placeholder="Twitter,Facebook,Blog" name="SNS" @change="getInputSNS" v-model="inputSNS" />
+        <input type="text" placeholder="Twitter,Facebook,Blog" name="SNS" v-model="inputSNS" />
       </div>
 
       <ul>  
@@ -49,20 +49,8 @@ export default {
     }
   },
   methods: {
-    getInputName (e) {
-      this.inputName = e.target.value
-    },
-    getInputDesc (e) {
-      this.inputDesc = e.target.value
-    },
-    getInputURL (e) {
-      this.inputURL = e.target.value
-    },
-    getInputSNS (e) {
-      this.inputSNS = e.target.value
-    },
     addToList () {
-      this.$emit('add', { name: this.inputName, description: this.inputDesc, category: this.selected, url: this.inputURL, sns: this.inputSNS })
+      this.$emit('add', { name: this.inputName, description: this.inputDescription, category: this.selected, url: this.inputURL, sns: this.inputSNS })
       this.inputName = ''
       this.inputDescription = ''
       this.selected = 'English'
